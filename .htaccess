@@ -1,0 +1,25 @@
+
+
+
+Options All -Indexes
+RewriteEngine on
+
+#ERROR 404
+ErrorDocument 404 http://localhost/proyecto_tienda/error
+RewriteRule ^error$ 404.php [L]
+
+
+
+#USUARIOS
+RewriteRule ^admin/usuarios$ views/usuarios/inicio.php [L]
+RewriteRule ^admin/usuarios-editar-(.+)$ views/usuarios/inicio_editar.php?id=$1 [L]
+RewriteRule ^admin/usuarios-detalle-(.+)$ views/usuarios/inicio_detalle.php?id=$1 [L]
+
+
+
+
+
+
+
+
+

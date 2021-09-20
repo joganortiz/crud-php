@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.page-wrap {
+    margin-top: 12.5%;
+}
+
+.dropdown-toggle {
+    background-color: #5ab5eb;
+    border: 1px solid #000;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.dropdown-menu {
+    font-size: 13px;
+}
+
+.table,
+.input-group-text,
+.form-control {
+    font-size: 14px;
+    height: 35px;
+}
+
+.botones {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.imagen {
+    height: 10px;
+    width: 10px;
+}
