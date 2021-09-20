@@ -15,6 +15,14 @@ var procesosInsertarProducto = {
                 "url": "../Controllers/usurios/usuarios.php?case=ListarUsuarios",
                 "dataSrc": ""
             },
+            "columns":[
+            {"data":"#"},
+            {"data":"nombre"},
+            {"data":"telefono"},
+            {"data":"imagen"},
+            {"data":"status"},
+            {"data":"options"}
+        ],
             "initComplete": function() {
                 procesosInsertarProducto.CrearUsuarios(table)
 
