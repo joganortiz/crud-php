@@ -31,13 +31,13 @@ class Upload {
 		$this->filename = (($array)?$_FILES[$field]['name'][$i]:$_FILES[$field]['name']);
 		$this->filetemp = (($array)?$_FILES[$field]['tmp_name'][$i]:$_FILES[$field]['tmp_name']);
 		// $this->filetype = _mime_content_type2($this->filetemp); 
-		if(function_exists('mime_content_type')){
-			$this->filetype = mime_content_type($this->filetemp); 
-		}else if(class_exists('finfo')){
-			$this->filetype = _mime_content_type2($this->filetemp); 
-		}else{
-			$this->filetype = self::returnMIMEType($this->filename); 
-		}		
+		// if(function_exists('mime_content_type')){
+		// 	$this->filetype = mime_content_type($this->filetemp); 
+		// }else if(class_exists('finfo')){
+		// 	$this->filetype = _mime_content_type2($this->filetemp); 
+		// }else{
+		// 	$this->filetype = self::returnMIMEType($this->filename); 
+		// }		
 
 		$this->fileexte = strtolower(substr($this->filename, strrpos($this->filename, '.')+1));
 		$this->newfile = (($renombrar)?substr(md5(uniqid(rand())),0,8).".".$this->fileexte:((!empty($name_defect))?$name_defect:$this->filename)  );
@@ -79,11 +79,11 @@ class Upload {
 				}
 
 				// check content type
-				if (!in_array($this->filetype, $this->allowed_image)) {
-					$this->message = "carga_archivos_4";
-					$this->isupload = false;
-					return false;
-				}
+				// if (!in_array($this->filetype, $this->allowed_image)) {
+				// 	$this->message = "carga_archivos_4";
+				// 	$this->isupload = false;
+				// 	return false;
+				// }
 
 				if (function_exists('exif_imagetype')) {
 					// check type
@@ -107,11 +107,11 @@ class Upload {
 			}
 
 			// check if file extension is blocked
-			if (in_array($this->fileexte, $this->blocked)) {
-				$this->message = "carga_archivos_7";
-				$this->isupload = false;
-				return false;
-			}
+			// if (in_array($this->fileexte, $this->blocked)) {
+			// 	$this->message = "carga_archivos_7";
+			// 	$this->isupload = false;
+			// 	return false;
+			// }
 
 			
 				

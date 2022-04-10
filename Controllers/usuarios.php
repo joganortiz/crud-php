@@ -1,5 +1,5 @@
 <?php
-require_once("../../Libraries/includes.php");
+require_once("../Libraries/includes.php");
 
 //Se toma la peticion
 $post = $get = false;
@@ -36,8 +36,8 @@ switch($caseProcess){
                                 <i class="bi bi-gear-fill"></i> acciones
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="usuarios-detalle-'. Encrypter::encryption($arrData[$i]['id']).'"><i class="bi bi-file-richtext"></i>  Ver detalle</a></li>
-                                <li><a class="dropdown-item" href="usuarios-editar-'. Encrypter::encryption($arrData[$i]['id']).'" title="Editar usuario"><i class="bi bi-pencil-square"></i> Editar</a></li>
+                                <li><a class="dropdown-item" href="usuario-detalle-'. Encrypter::encryption($arrData[$i]['id']).'"><i class="bi bi-file-richtext"></i>  Ver detalle</a></li>
+                                <li><a class="dropdown-item" href="usuario-editar-'. Encrypter::encryption($arrData[$i]['id']).'" title="Editar usuario"><i class="bi bi-pencil-square"></i> Editar</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a href="#" class="dropdown-item btnDelUsuario" data-control="'.Encrypter::encryption($arrData[$i]['id']).'" title="Eliminar usuario"><i class="bi bi-trash"></i> Eliminar</a></li>
                             </ul>
@@ -76,24 +76,24 @@ switch($caseProcess){
 						$continuar = false;
 					}
 
-                    if (!file_exists('../../Assets/img/usuarios')) {
-						mkdir("../../Assets/img/usuarios" , 0777, true);
-						chmod("../../Assets/img/usuarios",0777);
+                    if (!file_exists('../Assets/img/usuarios')) {
+						mkdir("../Assets/img/usuarios" , 0777, true);
+						chmod("../Assets/img/usuarios",0777);
 					}
 
-                    if (!file_exists('../../Assets/img/usuarios')) {
-						mkdir("../../Assets/img/usuarios" , 0777, true);
-						chmod("../../Assets/img/usuarios",0777);
+                    if (!file_exists('../Assets/img/usuarios')) {
+						mkdir("../Assets/img/usuarios" , 0777, true);
+						chmod("../Assets/img/usuarios",0777);
 					}
 
-					if (!file_exists('../../Assets/img/usuarios/'.$id_contenido)) {
-						mkdir("../../Assets/img/usuarios/".$id_contenido , 0777, true);
-						chmod("../../Assets/img/usuarios/".$id_contenido, 0777);
+					if (!file_exists('../Assets/img/usuarios/'.$id_contenido)) {
+						mkdir("../Assets/img/usuarios/".$id_contenido , 0777, true);
+						chmod("../Assets/img/usuarios/".$id_contenido, 0777);
 					}
 
-                    $carpeta = "../../Assets/img/usuarios/".$id_contenido;
-					file_put_contents("../../Assets/img/usuarios/index.php", "<?php \r\n exit; \r\n ?>");
-					file_put_contents("../../Assets/img/usuarios/".$id_contenido."/index.php", "<?php \r\n exit; \r\n ?>");
+                    $carpeta = "../Assets/img/usuarios/".$id_contenido;
+					file_put_contents("../Assets/img/usuarios/index.php", "<?php \r\n exit; \r\n ?>");
+					file_put_contents("../Assets/img/usuarios/".$id_contenido."/index.php", "<?php \r\n exit; \r\n ?>");
 					file_put_contents($carpeta."/index.php", "<?php \r\n exit; \r\n ?>");
 
                     $file_name=$_FILES["imagen"]["name"];
@@ -132,9 +132,9 @@ switch($caseProcess){
         if(isset($_FILES["imagen"]) && $_FILES["imagen"]["name"]){
             $imagen = $conexiondb->real_escape_string($_FILES["imagen"]["name"]);
 
-            if (file_exists('../../Assets/img/usuarios'.$id_contenido)) {
-                chmod('../../Assets/img/usuarios'.$id_contenido,0777);
-                unlink('../../Assets/img/usuarios'.$id_contenido);
+            if (file_exists('../Assets/img/usuarios'.$id_contenido)) {
+                chmod('../Assets/img/usuarios'.$id_contenido,0777);
+                unlink('../Assets/img/usuarios'.$id_contenido);
             }
 
             $permitidos = array("image/jpg", "image/jpeg", "image/png"); #Creamos un array que contengan los archivos que permitiremos
@@ -143,24 +143,24 @@ switch($caseProcess){
                 $continuar = false;
             }
 
-            if (!file_exists('../../Assets/img')) {
-                mkdir("../../Assets/img" , 0777, true);
-                chmod("../../Assets/img",0777);
+            if (!file_exists('../Assets/img')) {
+                mkdir("../Assets/img" , 0777, true);
+                chmod("../Assets/img",0777);
             }
 
-            if (!file_exists('../../Assets/img/usuarios')) {
-                mkdir("../../Assets/img/usuarios" , 0777, true);
-                chmod("../../Assets/img/usuarios",0777);
+            if (!file_exists('../Assets/img/usuarios')) {
+                mkdir("../Assets/img/usuarios" , 0777, true);
+                chmod("../Assets/img/usuarios",0777);
             }
 
-            if (!file_exists('../../Assets/img/usuarios/'.$id_contenido)) {
-                mkdir("../../Assets/img/usuarios/".$id_contenido , 0777, true);
-                chmod("../../Assets/img/usuarios/".$id_contenido,0777);
+            if (!file_exists('../Assets/img/usuarios/'.$id_contenido)) {
+                mkdir("../Assets/img/usuarios/".$id_contenido , 0777, true);
+                chmod("../Assets/img/usuarios/".$id_contenido,0777);
             }
 
-            $carpeta = "../../Assets/img/usuarios/".$id_contenido;
-            file_put_contents("../../Assets/img/usuarios/index.php", "<?php \r\n exit; \r\n ?>");
-            file_put_contents("../../Assets/img/usuarios/".$id_contenido."/index.php", "<?php \r\n exit; \r\n ?>");
+            $carpeta = "../Assets/img/usuarios/".$id_contenido;
+            file_put_contents("../Assets/img/usuarios/index.php", "<?php \r\n exit; \r\n ?>");
+            file_put_contents("../Assets/img/usuarios/".$id_contenido."/index.php", "<?php \r\n exit; \r\n ?>");
             file_put_contents($carpeta."/index.php", "<?php \r\n exit; \r\n ?>");
 
              #Inicamos el proceso para guardar los archivos en la carpeta

@@ -19,7 +19,7 @@
                 <div class="col-md-12 text-center">
                     <span class="display-1 d-block">404</span>
                     <div class="mb-4 lead">No se encontró la página que busca.</div>
-                    <a href="admin/usuarios" class="btn btn-link">Volver a Inicio</a>
+                    <a href="usuarios" class="btn btn-link">Volver a Inicio</a>
                 </div>
             </div>
         </div>

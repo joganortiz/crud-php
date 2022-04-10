@@ -9,20 +9,20 @@ var procesosInsertarProducto = {
             "aProcessing": true,
             "aServerSide": true,
             "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+                //"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": "../Controllers/usurios/usuarios.php?case=ListarUsuarios",
+                "url": "Controllers/usuarios.php?case=ListarUsuarios",
                 "dataSrc": ""
             },
-            "columns":[
-            {"data":"#"},
-            {"data":"nombre"},
-            {"data":"telefono"},
-            {"data":"imagen"},
-            {"data":"status"},
-            {"data":"options"}
-        ],
+            "columns": [
+                { "data": "#" },
+                { "data": "nombre" },
+                { "data": "telefono" },
+                { "data": "imagen" },
+                { "data": "status" },
+                { "data": "options" }
+            ],
             "initComplete": function() {
                 procesosInsertarProducto.CrearUsuarios(table)
 
@@ -58,7 +58,7 @@ var procesosInsertarProducto = {
                 $.ajax({
                     type: "POST",
                     dataType: "json",
-                    url: "../Controllers/usurios/usuarios.php",
+                    url: "Controllers/usuarios.php",
                     data: { "case": 'eliminarUsuario', "id": id },
                     success: function(response, xhr, settings) {
                         if (response.status == 1) {
@@ -107,7 +107,7 @@ var procesosInsertarProducto = {
                 contentType: false,
                 type: "POST",
                 dataType: "json",
-                url: "../Controllers/usurios/usuarios.php",
+                url: "Controllers/usuarios.php",
                 data: formData,
                 success: function(response, xhr, settings) {
                     if (response.status == 1) {
@@ -167,7 +167,7 @@ var procesosEditarUsuario = {
                 contentType: false,
                 type: "POST",
                 dataType: "json",
-                url: "../Controllers/usurios/usuarios.php",
+                url: "Controllers/usuarios.php",
                 data: formData,
                 success: function(response, xhr, settings) {
                     if (response.status == 1) {

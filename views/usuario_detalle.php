@@ -1,5 +1,5 @@
 <?php
-    require_once("../../Libraries/includes.php");
+    require_once("../Libraries/includes.php");
     $objUsuario = new Usuarios();
     $arrData = $objUsuario->SELECT_Usuario(Encrypter::decryption($_GET["id"]));
 ?>
@@ -10,11 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Css -->
-     <link href="../Assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="Assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="../Assets/js/sweetalert2/sweetalert2.min.css">
-    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
     <title>Usuario Detalles</title>
 </head>
 <body>
@@ -56,9 +54,9 @@
                     <div class="row">
                         <center>
                         <?php if(!empty($arrData["imagen"])){ ?>
-                            <img src="../Assets/img/usuarios/<?php echo $_GET["id"].'/'.utf8_decode($arrData["imagen"] ) ?>" class="img-thumbnail imagen" title="<?php echo $arrData["imagen"]?>" alt="<?php echo $arrData["imagen"]?>" style="height: 400px;width: 400px; object-fit: cover; display: block; margin-left: auto; margin-right: auto;">
+                            <img src="Assets/img/usuarios/<?php echo $_GET["id"].'/'.utf8_decode($arrData["imagen"] ) ?>" class="img-thumbnail imagen" title="<?php echo $arrData["imagen"]?>" alt="<?php echo $arrData["imagen"]?>" style="height: 400px;width: 400px; object-fit: cover; display: block; margin-left: auto; margin-right: auto;">
                         <?php }else{ ?>
-                            <img src="../Assets/img/default.png"  class="img-thumbnail" title="<?php echo $arrData["imagen"]?>" class="img-thumbnail imagen" alt="default.png" style="height: 400px;width: 400px;object-fit: cover; display: block; margin-left: auto; margin-right: auto;">
+                            <img src="Assets/img/default.png"  class="img-thumbnail" title="<?php echo $arrData["imagen"]?>" class="img-thumbnail imagen" alt="default.png" style="height: 400px;width: 400px;object-fit: cover; display: block; margin-left: auto; margin-right: auto;">
                         <?php } ?>
                         </center>
                     </div>
@@ -67,20 +65,5 @@
             </div>
         </div>
     </div>
-
-   <!-- JavasCripts -->
-   <script src="../Assets/js/usuarios.js"></script>
-    <script src="../Assets/js/sweetalert2/sweetalert2.min.js"></script>
-    <script src="../Assets/js/tinymce/tinymce.min.js"></script>
-    <script src="../Assets/js/plugins/pace.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="//cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
-    <script>
-		$(document).ready(function(){
-			procesosEditarUsuario.initEditarUsario();
-            App.init();
-            
-		});
-	</script>
 </body>
 </html>

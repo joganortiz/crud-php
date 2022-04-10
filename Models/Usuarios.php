@@ -1,5 +1,5 @@
 <?php 
-require_once("../../Libraries/includes.php");
+require_once("../Libraries/includes.php");
 
 	class Usuarios extends Conexion{
 		private $intIdUsuario;
@@ -22,20 +22,20 @@ require_once("../../Libraries/includes.php");
 				case '4':
 					$encontrado = false;
 					if ($ruta==1) {
-						$route = '../../Assets/img/usuarios/';
+						$route = '../Assets/img/usuarios/';
 					}else{
-						$route = '../../../Assets/img/usuarios/';
+						$route = '../../Assets/img/usuarios/';
 					}
 					if(file_exists($route.$id.'/'.$imagen) && $imagen!=''){
 	
 						return '
-							<img src="../Assets/img/usuarios/'.$id.'/'.utf8_decode($imagen).'" class="img-thumbnail" style="height: 40px;width: 40px;object-fit: cover; display: block; margin-left: auto; margin-right: auto;">';
+							<img src="Assets/img/usuarios/'.$id.'/'.utf8_decode($imagen).'" class="img-thumbnail" style="height: 40px;width: 40px;object-fit: cover; display: block; margin-left: auto; margin-right: auto;">';
 							$encontrado = true;
 						break;
 					}
 	
 					if(!$encontrado){
-						return '<img src="../Assets/img/default.png"  style="height: 40px;width: 40px;object-fit: cover; display: block; margin-left: auto; margin-right: auto;">';
+						return '<img src="Assets/img/default.png"  style="height: 40px;width: 40px;object-fit: cover; display: block; margin-left: auto; margin-right: auto;">';
 					}
 				break;
 				

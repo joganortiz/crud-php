@@ -1,5 +1,5 @@
 <?php
 
-    header("location: admin/usuarios");
+    header("location: usuarios");
 
 ?>

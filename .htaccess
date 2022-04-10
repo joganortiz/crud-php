@@ -5,15 +5,15 @@ Options All -Indexes
 RewriteEngine on
 
 #ERROR 404
-ErrorDocument 404 http://localhost/proyecto_tienda/error
+ErrorDocument 404 http://localhost/crud-php/error
 RewriteRule ^error$ 404.php [L]
 
 
 
 #USUARIOS
-RewriteRule ^admin/usuarios$ views/usuarios/inicio.php [L]
-RewriteRule ^admin/usuarios-editar-(.+)$ views/usuarios/inicio_editar.php?id=$1 [L]
-RewriteRule ^admin/usuarios-detalle-(.+)$ views/usuarios/inicio_detalle.php?id=$1 [L]
+RewriteRule ^usuarios$ views/usuarios.php [L]
+RewriteRule ^usuario-editar-(.+)$ views/usuario_editar.php?id=$1 [L]
+RewriteRule ^usuario-detalle-(.+)$ views/usuario_detalle.php?id=$1 [L]
 
 
 
